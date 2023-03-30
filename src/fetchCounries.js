@@ -6,7 +6,7 @@
 і повертає проміс з масивом країн - результатом запиту. 
 Винеси її в окремий файл fetchCountries.js і зроби іменований експорт. */
 
-fetch('https://jsonplaceholder.typicode.com/users')
+/*fetch('https://jsonplaceholder.typicode.com/users')
   .then(response => {
     // Response handling
   })
@@ -15,7 +15,10 @@ fetch('https://jsonplaceholder.typicode.com/users')
   })
   .catch(error => {
     // Error handling
-  });
+  });*/
 
 //https://restcountries.com/v3.1/all
 //https://restcountries.com/v3.1/name/{name}?fullText=true
+//https://restcountries.com/v3.1/name/{name}
+
+ 
