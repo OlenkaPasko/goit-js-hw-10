@@ -9,3 +9,8 @@ const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
 searchBox.addEventListener('input', debounce(DEBOUNCE_DELAY));
+
+function onInputSearch(event) {
+    const sechValue = searchBox.ariaValueMax.trim();
+
+}
