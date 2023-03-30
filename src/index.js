@@ -8,9 +8,29 @@ const searchBox = document.querySelector('#search-box');
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
-searchBox.addEventListener('input', debounce(DEBOUNCE_DELAY));
+searchBox.addEventListener('input', debounce(onInputSearch, DEBOUNCE_DELAY));
 
+
+//Поле пошуку
 function onInputSearch(event) {
-    const sechValue = searchBox.ariaValueMax.trim();
-
+  const searchValue = searchBox.ariaValueMax.trim();
+  countryList.innerHTML = '';
+  countryInfo.innerHTML = '';
+  if (!searchValue) return;
 }
+/*Інтерфейс */
+//fetchCountries();
+
+
+/*Фільтрація полів
+//function countryList()
+//name.official - повна назва країни
+capital - столиця
+population - населення
+flags.svg - посилання на зображення прапора
+languages - масив мов
+
+додай рядок параметрів запиту - таким чином цей бекенд реалізує фільтрацію полів.*/
+
+//Обробка помилки
+//fetchCountries.js
