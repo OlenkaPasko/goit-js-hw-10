@@ -27,6 +27,12 @@ function onInputSearch(event) {
       return;
     }
     renderedCountries(result);
+  })
+    .catch(error => {
+             countryList.innerHTML = '';
+             countryInfo.innerHTML = '';
+             Notify.failure('Oops, there is no country with that name');
+         
   });
 }
 function renderedCountries(result) {

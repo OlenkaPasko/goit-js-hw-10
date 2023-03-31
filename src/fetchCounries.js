@@ -3,7 +3,7 @@ export const fetchCountries = name => {
     fields: `name,capital,population,flags,languages,`,
   });
   return fetch(
-    'https://restcountries.com/v3.1/name/${name}?${params.toString()}'
+    'https://restcountries.com/v3.1/name/${name}?${params}'
   ).then(response => {
     if (!response.ok) {
       throw new Error(response.status);
