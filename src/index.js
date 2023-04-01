@@ -34,7 +34,7 @@ fetchCountries(searchValue)
   .catch(error => {
     Notify.failure('Oops, there is no country with that name');
   });
-    
+
 function renderedCountries(result) {
   const input = result.length;
 
