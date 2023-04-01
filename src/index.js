@@ -1,6 +1,7 @@
 import './css/styles.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import debounce from 'lodash.debounce';
+import { fetchCountries } from './js/fetchCountries';
 
 const DEBOUNCE_DELAY = 300;
 
@@ -16,10 +17,12 @@ function onInputSearch(event) {
   countryList.innerHTML = '';
   countryInfo.innerHTML = '';
   if (!searchValue) return;
+}
+//Інтерфейс
+//обробка помилки
 
-  //інтерфейс
-  //Якщо у відповіді бекенд повернув більше ніж 10 країн, в інтерфейсі
-  fetchCountries(searchValue).then(result => {
+fetchCountries(searchValue)
+  .then(result => {
     if (result.length > 10) {
       Notify.info(
         'Too many matches found. Please, enter a more specific name.'
@@ -28,13 +31,10 @@ function onInputSearch(event) {
     }
     renderedCountries(result);
   })
-    .catch(error => {
-             countryList.innerHTML = '';
-             countryInfo.innerHTML = '';
-             Notify.failure('Oops, there is no country with that name');
-         
+  .catch(error => {
+    Notify.failure('Oops, there is no country with that name');
   });
-}
+    
 function renderedCountries(result) {
   const input = result.length;
 
@@ -45,10 +45,13 @@ function renderedCountries(result) {
   //Якщо бекенд повернув від 2-х до 10-и країн,
   if (input > 1 && input <= 10) {
     countryInfo.innerHTML = '';
-    countriesList(result);
+    countriesListMarkup(result);
   }
 }
-function countriesList(result) {
+
+//Фільтрація полів
+
+function countriesListMarkup(result) {
   const listMarkup = result
     .map(({ name, flags }) => {
       return `<li>
@@ -57,7 +60,7 @@ function countriesList(result) {
                  </li>`;
     })
     .join('');
-  countryList.innerHTML = listMarkup;
+  countriesListMarkup.innerHTML = listMarkup;
   return listMarkup;
 }
 
