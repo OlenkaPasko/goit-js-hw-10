@@ -36,14 +36,14 @@ fetchCountries(searchValue)
   });
 
 function renderedCountries(result) {
-  const input = result.length;
+  const inputLetters = result.length;
 
   if (inputLetters === 1) {
     countryList.innerHTML = '';
     countryCardMarkup(result);
   }
   //Якщо бекенд повернув від 2-х до 10-и країн,
-  if (input > 1 && input <= 10) {
+  if (inputLetters > 1 && inputLetters <= 10) {
     countryInfo.innerHTML = '';
     countriesListMarkup(result);
   }
