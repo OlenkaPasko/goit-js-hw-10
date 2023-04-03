@@ -18,3 +18,39 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+image {
+  display: block;
+}
+
+#search-box {
+  padding: 10px;
+  border-radius: 25px;
+  color: blue;
+}
+
+
+.country-list {
+  display: flex;
+  align-items: center;
+}
+
+.country-list:hover,
+.country-list:focus {
+  color: darkkhaki;
+
+}
+
+.country-info {
+  padding: 10px;
+}
+
+.country-info:hover,
+.country-info:focus {
+  color: cornsilk;
+}

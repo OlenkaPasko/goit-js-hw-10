@@ -77,4 +77,3 @@ function countryCardMarkup(result) {
   countryInfo.innerHTML = cardMarkup;
   return cardMarkup;
 }
-
