@@ -1,4 +1,4 @@
-export function fetchCountries (name){
+export const fetchCountries = (name) => {
   const params = new URLSearchParams({
     fields: `name,capital,population,flags,languages,`,
   });

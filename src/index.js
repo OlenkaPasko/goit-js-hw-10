@@ -19,23 +19,12 @@ function onInputSearch(event) {
   if (!searchValue) return;
 }
 //Інтерфейс
-//обробка помилки
+
 
 fetchCountries(searchValue)
-  .then(result => {
-    if (result.length > 10) {
-      Notify.info(
-        'Too many matches found. Please, enter a more specific name.'
-      );
-      return;
-    }
-    renderedCountries(result);
-  })
-  .catch(error => {
-    Notify.failure('Oops, there is no country with that name');
-  });
-
-function renderedCountries(result) {
+  .then(result => { 
+  
+//function renderedCountries(result) {
   const inputLetters = result.length;
 
   if (inputLetters === 1) {
@@ -47,7 +36,17 @@ function renderedCountries(result) {
     countryInfo.innerHTML = '';
     countriesListMarkup(result);
   }
-}
+    if (result.length > 10) {
+      Notify.info(
+        'Too many matches found. Please, enter a more specific name.'
+      );
+      return;
+    }
+    renderedCountries(result);
+  })
+  .catch(error => {
+    Notify.failure('Oops, there is no country with that name');
+},
 
 //Фільтрація полів
 
@@ -62,7 +61,7 @@ function countriesListMarkup(result) {
     .join('');
   countriesListMarkup.innerHTML = listMarkup;
   return listMarkup;
-}
+},
 
 function countryCardMarkup(result) {
   const cardMarkup = result
@@ -78,4 +77,4 @@ function countryCardMarkup(result) {
     .join('');
   countryInfo.innerHTML = cardMarkup;
   return cardMarkup;
-}
+})
