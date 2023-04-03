@@ -5,7 +5,7 @@ export const fetchCountries = name => {
   return fetch(`https://restcountries.com/v3.1/name/${name}?${params}`).then(
     response => {
       if (!response.ok) {
-        throw new Error(response.status);
+        throw new Error(response.status === 404);
       }
       return response.json();
     }

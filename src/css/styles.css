@@ -25,10 +25,11 @@ p {
 }
 
 image {
-  display: block;
+  display: flex;
 }
 
 #search-box {
+  display: flex;
   padding: 10px;
   border-radius: 25px;
   color: blue;
@@ -40,11 +41,6 @@ image {
   align-items: center;
 }
 
-.country-list:hover,
-.country-list:focus {
-  color: darkkhaki;
-
-}
 
 .country-info {
   padding: 10px;
