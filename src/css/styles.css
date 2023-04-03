@@ -29,24 +29,27 @@ image {
 }
 
 #search-box {
-  display: flex;
+  display: block;
+  margin: 0 auto;
   padding: 10px;
   border-radius: 25px;
+
   color: blue;
 }
 
 
-.country-list {
-  display: flex;
-  align-items: center;
-}
-
-
+.country-list,
 .country-info {
-  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+
+  box-shadow:0px 4px 8px rgba(0, 0, 0, 0.04),
+    0px 2px 4px rgba(0, 0, 0, 0.08),
+    0px 1px 3px rgba(0, 0, 0, 0.16);
+    
+
 }
 
-.country-info:hover,
-.country-info:focus {
-  color: cornsilk;
-}
