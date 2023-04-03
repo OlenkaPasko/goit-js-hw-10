@@ -28,7 +28,7 @@ function onInputSearch(event) {
           countryCardMarkup(result);
         }
 
-        if (inputLetters > 1 && inputLetters <= 10) {
+        if (inputLetters >= 2 && inputLetters <= 10) {
           countryInfo.innerHTML = '';
           countryList.innerHTML = countriesListMarkup(result);
         }
