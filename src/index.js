@@ -30,7 +30,7 @@ function onInputSearch(event) {
 
         if (inputLetters > 1 && inputLetters <= 10) {
           countryInfo.innerHTML = '';
-          countriesListMarkup(result);
+          countryList.innerHTML = countriesListMarkup(result);
         }
 
         if (result.length > 10) {
